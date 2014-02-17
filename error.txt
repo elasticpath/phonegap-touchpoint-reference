@@ -1,0 +1,26 @@
+[4mRunning "build:android" (build) task[24m
+
+[4mRunning "exec:buildandroid" (exec) task[24m
+Generating config.xml from defaults for platform "android"
+Preparing android project
+Compiling app on platform "android" via command "cmd" /c c:\ep-poc-drop\ep-mobile\platforms\android\cordova\build
+[31m>> [39mC:\Users\jhowells\AppData\Roaming\npm\node_modules\cordova\node_modules\q\q.js:126[31m
+>> [39m                    throw e;[31m
+>> [39m                          ^[31m
+>> [39mError: An error occurred while building the android project.[31m
+>> [39m    at ChildProcess.<anonymous> (C:\Users\jhowells\AppData\Roaming\npm\node_modules\cordova\src\compile.js:65:22)[31m
+>> [39m    at ChildProcess.EventEmitter.emit (events.js:98:17)[31m
+>> [39m    at maybeClose (child_process.js:735:16)[31m
+>> [39m    at Socket.<anonymous> (child_process.js:948:11)[31m
+>> [39m    at Socket.EventEmitter.emit (events.js:95:17)[31m
+>> [39m    at Pipe.close (net.js:466:12)
+[31m>> [39mExited with code: 8.
+[33mWarning: Task "exec:buildandroid" failed. Use --force to continue.[39m
+
+[31mAborted due to warnings.[39m
+
+
+Execution Time (2014-01-20 17:43:53 UTC)
+loading tasks      117ms  ■■■■ 8%
+exec:buildandroid   1.4s  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 92%
+Total 1.5s

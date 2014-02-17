@@ -1,0 +1,112 @@
+<!-- Copyright © 2014 Elastic Path Software Inc. All rights reserved. -->
+
+<div id="DefaultComponentsAddressTemplateContainer">
+
+  <!-- Default Address Template -->
+  <script id="DefaultAddressTemplate" type="text/template">
+    <!-- defaultView, itemView tagName: ul, class: address-container -->
+    <li class="address-name" data-el-value="address.name"><%= E.givenName %> <%= E.familyName %></li>
+    <li class="address-street-address" data-el-value="address.streetAddress"><%= E.streetAddress %></li>
+    <li class="address-extended-address" data-el-value="address.extendedAddress"><%= E.extendedAddress %></li>
+    <li>
+      <span class="address-city" data-el-value="address.city"><%= E.city %></span>,
+      <span class="address-region" data-el-value="address.region"><%= E.region %></span>,
+      <span class="address-country" data-el-value="address.country"><%= E.country %></span>
+      <span class="address-postal-code" data-el-value="address.postalCode"><%= E.postalCode %></span>
+    </li>
+  </script>
+
+  <!-- Default Address Form Template -->
+  <script id="DefaultAddressFormTemplate" type="text/template">
+    <!-- defaultView, itemView tagName:div, class: address-form-container -->
+      <div class="form-group">
+        <label for="FirstName" data-el-label="addressForm.firstName" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.firstName') %></label>
+        <div class="address-form-input">
+          <input id="FirstName" name="FirstName" class="form-control" type="text" value="<%= E.givenName %>" autofocus="autofocus" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="LastName" data-el-label="addressForm.lastName" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.lastName') %></label>
+        <div class="address-form-input">
+          <input id="LastName" name="LastName" class="form-control" type="text" value="<%= E.familyName %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="StreetAddress" data-el-label="addressForm.streetAddress" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.streetAddress') %></label>
+        <div class="address-form-input">
+          <input id="StreetAddress" name="StreetAddress" class="form-control" type="text" value="<%= E.streetAddress %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ExtendedAddress" data-el-label="addressForm.extendedAddress" class="control-label address-form-label"><%= E.getI18nLabel('addressForm.extendedAddress') %></label>
+        <div class="address-form-input">
+          <input id="ExtendedAddress" name="ExtendedAddress" class="form-control" type="text" value="<%= E.extendedAddress %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="City" data-el-label="addressForm.city" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.city') %></label>
+        <div class="address-form-input">
+          <input id="City" name="City" class="form-control" type="text" value="<%= E.city %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Region" data-el-label="addressForm.region" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.region') %></label>
+        <div class="address-form-input">
+          <input id="Region" name="Region" class="form-control" value="<%= E.region %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Country" data-el-label="addressForm.country" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.country') %></label>
+        <div class="address-form-input">
+          <input id="Country" name="Country" class="form-control" value="<%= E.country %>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="PostalCode" data-el-label="addressForm.postalCode" class="control-label address-form-label">
+          <span class="required-label">*</span> <%= E.getI18nLabel('addressForm.postalCode') %></label>
+        <div class="address-form-input">
+          <input id="PostalCode" name="PostalCode" class="form-control" type="text" value="<%= E.postalCode %>">
+        </div>
+      </div>
+  </script>
+
+  <!-- Default Create Address Form Template -->
+  <script id="DefaultCreateAddressTemplate" type="text/template">
+    <!-- defaultView, Layout tagName: div, class: create-address-container container-->
+    <h3><%= E.getI18nLabel('addressForm.createAddressTitle') %></h3>
+
+    <div class="feedback-label address-form-feedback-container" data-region="componentAddressFeedbackRegion"></div>
+
+    <form role="form" method="POST" class="form-horizontal">
+      <div data-region="componentAddressFormRegion"></div>
+
+      <div class="form-group create-address-btn-container container">
+        <button class="btn btn-primary address-save-btn" data-el-label="addressForm.create"><%= E.getI18nLabel('addressForm.saveBtn') %></button>
+        <button class="btn address-cancel-btn" data-el-label="addressForm.cancel"><%= E.getI18nLabel('addressForm.cancelBtn') %></button>
+      </div>
+    </form>
+  </script>
+
+  <script id="DefaultEditAddressTemplate" type="text/template">
+    <!-- defaultView, Layout tagName: div, class: create-address-container container-->
+    <h3><%= E.getI18nLabel('addressForm.editAddressTitle') %></h3>
+
+    <div class="feedback-label address-form-feedback-container" data-region="componentAddressFeedbackRegion"></div>
+
+    <form role="form" method="POST" class="form-horizontal">
+      <div data-region="componentAddressFormRegion"></div>
+
+      <div class="form-group create-address-btn-container container">
+        <button class="btn btn-primary address-save-btn" data-el-label="addressForm.edit"><%= E.getI18nLabel('addressForm.saveBtn') %></button>
+        <button class="btn address-cancel-btn" data-el-label="addressForm.cancel"><%= E.getI18nLabel('addressForm.cancelBtn') %></button>
+      </div>
+    </form>
+  </script>
+
+</div>

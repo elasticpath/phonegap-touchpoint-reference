@@ -1,0 +1,167 @@
+<!-- Copyright © 2014 Elastic Path Software Inc. All rights reserved. -->
+
+<div id="CheckoutTemplateContainer">
+
+  <!-- Default Checkout Layout Template [default Layout, class: checkout-container container] -->
+  <script id="DefaultCheckoutLayoutTemplate" type="text/template">
+      <div class="checkout-container-inner">
+
+        <div data-region="checkoutTitleRegion" class="checkout-title-container">
+          <div class="activity-indicator-container">
+            <img class="activity-indicator" src="images/activity-indicator-strobe.gif"/>
+          </div>
+        </div>
+
+        <div class="checkout-main-container">
+          <div data-region="billingAddressesRegion"></div>
+          <div class="checkout-shipping-container">
+            <div data-region="shippingAddressesRegion"></div>
+            <div data-region="shippingOptionsRegion"></div>
+          </div>
+          <div data-region="paymentMethodsRegion"></div>
+        </div>
+
+        <div class="checkout-sidebar" data-region="checkoutOrderRegion"></div>
+
+      </div>
+  </script>
+
+  <!-- Default Checkout Title Template [default ItemView] -->
+  <script id="DefaultCheckoutTitleTemplate" type="text/template">
+    <h1 class="view-title"><%= E.getI18nLabel('checkout.checkoutTitle') %></h1>
+  </script>
+
+  <!-- Renders a radio button and label for the selection of an individual address -->
+  <script id="CheckoutAddressSelectorTemplate" type="text/template">
+    <!-- A unique ID to associate address labels with radio buttons -->
+    <% var uniqueId = E.getUniqueIdForFormInput('shippingOption_'); %>
+    <input type="radio" name="<%= E.addressType %>" id="<%= uniqueId %>" class="checkout-address-radio" <%= E.getCheckoutRadioCheckedAttr(E) %> />
+    <label for="<%= uniqueId %>">
+      <div data-region="checkoutAddressRegion"></div>
+    </label>
+  </script>
+
+  <!-- Rendered when there are no billing addresses to display -->
+  <script id="EmptyBillingAddressesTemplate" type="text/template">
+    <p data-el-value="checkout.noBillingAddressesMsg"><%= E.getI18nLabel('checkout.noBillingAddressesMsg') %></p>
+  </script>
+
+  <!-- Provides a wrapper for a list of billing addresses -->
+  <script id="BillingAddressesTemplate" type="text/template">
+    <h2><%= E.getI18nLabel('checkout.billingAddress') %></h2>
+    <div data-region="billingAddressSelectorsRegion"></div>
+    <button class="btn btn-primary checkout-new-address-btn" data-el-label="checkout.newBillingAddressBtn"><%= E.getI18nLabel('checkout.newAddressBtn')%></button>
+  </script>
+
+  <!-- Rendered when there are no shipping addresses to display -->
+  <script id="EmptyShippingAddressesTemplate" type="text/template">
+    <p data-el-value="checkout.noShippingAddressesMsg"><%= E.getI18nLabel('checkout.noShippingAddressesMsg') %></p>
+  </script>
+
+  <!-- Provides a wrapper for a list of shipping addresses -->
+  <script id="ShippingAddressesTemplate" type="text/template">
+    <h2><%= E.getI18nLabel('checkout.shippingAddress') %></h2>
+    <div data-region="shippingAddressSelectorsRegion"></div>
+    <button class="btn btn-primary checkout-new-address-btn" data-el-label="checkout.newShippingAddressBtn"><%= E.getI18nLabel('checkout.newAddressBtn')%></button>
+  </script>
+
+  <!-- Rendered when there are no shipping addresses to display -->
+  <script id="EmptyShippingOptionsTemplate" type="text/template">
+    <p data-el-value="checkout.noShippingOptionsMsg"><%= E.getI18nLabel('checkout.noShippingOptionsMsg') %></p>
+  </script>
+
+  <!-- Renders a radio button and label for the selection of an individual address -->
+  <script id="ShippingOptionSelectorTemplate" type="text/template">
+    <!-- A unique ID to associate address labels with radio buttons -->
+    <% var uniqueId = E.getUniqueIdForFormInput('shippingOption_'); %>
+    <input type="radio" name="shippingOption" id="<%= uniqueId %>" class="shipping-option-radio" <%= E.getCheckoutRadioCheckedAttr(E) %> />
+    <label for="<%= uniqueId %>">
+      <span data-el-value="shippingOptionDisplayName"><%= E.displayName %></span>
+      <span data-el-value="shippingOptionCarrier"><%= E.carrier %></span>
+      <span data-el-value="shippingOptionCost"><%= E.costDisplay %></span>
+    </label>
+  </script>
+
+  <!-- Provides a wrapper for a list of shipping options -->
+  <script id="ShippingOptionsTemplate" type="text/template">
+    <h2><%= E.getI18nLabel('checkout.shippingOption') %></h2>
+    <div data-region="shippingOptionSelectorsRegion"></div>
+  </script>
+
+
+  <!--
+  ====== Select Payment Options ===========
+  -->
+  <!-- Provides a wrapper for a list of payment options -->
+  <script id="PaymentMethodsTemplate" type="text/template">
+    <h2><%= E.getI18nLabel('checkout.paymentMethod') %></h2>
+    <div data-region="paymentMethodSelectorsRegion"></div>
+  </script>
+
+  <!-- Rendered when there are no payment options to display -->
+  <script id="EmptyPaymentMethodsTemplate" type="text/template">
+    <p data-el-value="checkout.noPaymentMethodsMsg"><%= E.getI18nLabel('checkout.noPaymentMethodsMsg') %></p>
+  </script>
+
+  <!-- Providers a wrapper to render a radio button and region to render the individual payment options -->
+  <script id="PaymentMethodSelectorTemplate" type="text/template">
+    <!-- A unique ID to associate address labels with radio buttons -->
+    <% var uniqueId = E.getUniqueIdForFormInput('paymentMethod_'); %>
+    <input type="radio" name="paymentMethod" id="<%= uniqueId %>" class="payment-option-radio" <%= E.getCheckoutRadioCheckedAttr(E) %> />
+    <label for="<%= uniqueId %>">
+      <div data-region="checkoutPaymentMethodRegion"></div>
+    </label>
+  </script>
+
+
+  <!--
+  ====== Checkout Summary===========
+  -->
+  <!-- Checkout Summary Layout Template [default Layout]-->
+  <script id="CheckoutSummaryTemplate" type="text/template">
+    <div class="checkout-sidebar-inner">
+      <ul class="checkout-summary-list">
+        <li class="checkout-total-quantity">
+          <label data-el-label="checkout.totalQuantity"><%= E.getI18nLabel('checkout.totalQuantity') %>: </label>
+          <span data-el-value="checkout.totalQuantity"><%= E.totalQuantity %></span>
+        </li>
+        <li class="checkout-subtotal">
+          <label data-el-label="checkout.subTotal"><%= E.getI18nLabel('checkout.subTotal') %>: </label>
+          <span data-el-value="checkout.subTotal"><%= E.subTotal.display %></span>
+        </li>
+        <li class="checkout-shipping">
+          <div data-region="checkoutShippingTotalRegion"></div>
+        </li>
+        <li class="checkout-tax" data-el-container="checkout.taxes">
+          <div data-region="checkoutTaxTotalRegion"></div>
+          <div data-region="checkoutTaxBreakDownRegion"></div>
+        </li>
+        <li class="checkout-total">
+          <label data-el-label="checkout.total"><%= E.getI18nLabel('checkout.total') %>:</label>
+          <span data-el-value="checkout.total"><%= E.total.display %></span>
+        </li>
+      </ul>
+
+      <button class="btn-cmd-submit-order" data-el-label="checkout.submitOrder"
+      <%= E.getSubmitOrderButtonDisabledAttr(E.submitOrderActionLink) %>><%= E.getI18nLabel('checkout.submitOrder') %></button>
+    </div>
+  </script>
+
+  <!-- Renders the total shipping costs in the checkout summary [default ItemView, className: checkout-shipping-total] -->
+  <script id="CheckoutShippingTotalTemplate" type="text/template">
+    <label data-el-label="checkout.shippingTotal"><%= E.getI18nLabel('checkout.shippingTotal') %>: </label>
+    <span data-el-value="checkout.shippingTotal"><%= E.display %></span>
+  </script>
+
+  <!-- Checkout Tax Template [default ItemView, tagName: li, className: checkout-tax]-->
+  <script id="CheckoutTaxTemplate" type="text/template">
+      <label data-el-label="checkout.tax"><%= E.title %>:</label>
+      <span data-el-value="checkout.tax"><%= E.display %></span>
+  </script>
+
+  <!-- Checkout Tax Total Template [default ItemView, className: checkout-tax-total]-->
+  <script id="CheckoutTaxTotalTemplate" type="text/template">
+    <label data-el-label="checkout.taxTotal"><%= E.getI18nLabel('checkout.taxTotal') %>: </label>
+    <span data-el-value="checkout.taxTotal"><%= E.display %></span>
+  </script>
+</div>

@@ -1,0 +1,185 @@
+{
+  "addressForm": {
+    "cancelBtn": "Cancel",
+    "city": "City",
+    "country": "Country",
+    "createAddressTitle": "New Address",
+    "editAddressTitle": "Edit Address",
+    "extendedAddress": "Extended Address",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "postalCode": "Postal Code",
+    "region": "Province",
+    "saveBtn": "Save",
+    "streetAddress": "Street Address",
+    "errorMsg" : {
+      "generalSaveAddressFailedErrMsg": "I'm sorry, there was an error saving this address. Please try again or contact your system administrator",
+      "addressFormEmptyErrMsg" : "No fields specified",
+      "missingFamilyNameErrMsg" : "Missing required field \"Last Name\"",
+      "missingGivenNameErrMsg" : "Missing required field \"First Name\"",
+      "missingPostalCodeErrMsg" : "Missing required field \"Postal Code\"",
+      "missingStreetAddErrMsg" : "Missing required field \"Street Address\"",
+      "missingRegionErrMsg" : "Missing required field \"Province\"",
+      "missingLocalityErrMsg" : "Missing required field \"City\"",
+      "missingCountryErrMsg" : "Missing required field \"Country\"",
+      "invalidFamilyNameErrMsg" : "\"Last Name\" is invalid: must be between 1 to 100 characters",
+      "invalidGivenNameErrMsg" : "\"First Name\" is invalid:  must be between 1 to 100 characters",
+      "invalidPostalCodeErrMsg" : "\"Postal Code\" is invalid:  must be between 1 to 50 characters",
+      "invalidStreetAddErrMsg" : "\"Street Address\" is invalid: must be between 1 to 200 characters",
+      "invalidExtendedAddErrMsg" : "\"Extended Address\" is invalid: must be between 0 to 200 characters",
+      "invalidLocalityErrMsg" : "\"City\" is invalid: must be between 1 to 200 characters ",
+      "invalidRegionErrMsg" : "\"Province\" is invalid or not supported",
+      "invalidCountryErrMsg" : "\"Country\" is invalid or not supported"
+    }
+  },
+  "auth": {
+    "loginMenu": "Login",
+    "login": "Login",
+    "loginTitle":"Login",
+    "logout": "Logout",
+    "profile":"Profile",
+    "password": "Password",
+    "userName": "Username",
+    "loginFormMissingFieldsErrMsg": "Username or password are missing. ",
+    "badCredentialErrMsg": "Your username or password is invalid. "
+  },
+  "availability": {
+    "ALWAYS": "Always",
+    "AVAILABLE": "In Stock",
+    "AVAILABLE_FOR_BACK_ORDER": "Available for Back Order",
+    "AVAILABLE_FOR_PRE_ORDER": "Pre Order",
+    "NOT_AVAILABLE": "Out of Stock",
+    "releasedOn": "Expected Release Date"
+  },
+  "cart": {
+    "availability": "Availability",
+    "checkout": "Proceed to Checkout",
+    "name": "Name",
+    "itemPrice": "Unit Price",
+    "itemTotal": "Total Price",
+    "product": "Product",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "subTotal": "Today's Subtotal",
+    "totalQuantity": "Total Quantity",
+    "viewTitle": "Shopping Cart",
+    "emptyCartMsg": "Your shopping cart is empty.",
+    "deletedLineItemUpdateErrMsg": "The lineItem you were trying to update doesn't exist anymore.",
+    "removeConfirmMsg": "Do you really want to delete this item?",
+    "genericUpdateErrMsg": "I'm sorry, there was an error updating the lineItem quantity. Please contact your system administrator."
+  },
+  "checkout": {
+    "billingAddress": "Billing Address",
+    "checkoutTitle": "Checkout Summary",
+    "newAddressBtn": "Add a New Address",
+    "paymentMethod": "Payment Method",
+    "shippingAddress": "Shipping Address",
+    "shippingOption": "Shipping Options",
+    "shippingTotal": "Today's Shipping Cost",
+    "submitOrder": "Complete Purchase",
+    "subTotal": "Today's Subtotal",
+    "taxTotal": "Today's Taxes",
+    "total": "Today's Total",
+    "totalQuantity": "Total Quantity",
+    "noBillingAddressesMsg": "You have no saved billing addresses.",
+    "noShippingAddressesMsg": "You have no saved shipping addresses.",
+    "noShippingOptionsMsg": "There are no shipping options available for your chosen shipping address.",
+    "noPaymentMethodsMsg": "You have no saved payment method.",
+    "submitOrderError": "There was an error with your purchase. Please try again or contact support.",
+    "updateChosenErrMsg": {
+      "billingAddress" : "I'm sorry, there was an error changing your selected billing address. Please contact your system administrator.",
+      "paymentMethod" : "I'm sorry, there was an error changing your selected payment method. Please contact your system administrator.",
+      "shippingAddress" : "I'm sorry, there was an error changing your selected shipping address. Please contact your system administrator.",
+      "shippingOption" : "I'm sorry, there was an error changing your selected shipping option. Please contact your system administrator."
+    }
+  },
+  "category": {
+    "next": "Next",
+    "prev": "Previous",
+    "page": "page",
+    "of": "of",
+    "resultsOnPage": "results on page",
+    "totalResults": "results",
+    "emptyViewMsg": "No item currently in this category"
+  },
+  "general": {
+    "no": "No",
+    "yes": "Yes"
+  },
+  "itemDetail": {
+    "addToCart": "Add to Cart",
+    "noImgLabel": "No Image Available",
+    "noPrice":"n/a",
+    "listPrice": "Original Price",
+    "purchasePrice": "Price",
+    "quantity": "Quantity",
+    "rate":"Rate"
+  },
+  "profile":{
+    "title":"Profile",
+    "address" :{
+      "create":"Add a New Address",
+      "delete":"Delete",
+      "edit":"Edit",
+      "title": "Addresses",
+      "msg": {
+        "deleteErr": "I'm sorry, there was an error deleting the address. Please contact your system administrator.",
+        "deleteConfirm":"Do you really want to delete this address?",
+        "noAddress": "You have no saved addresses."
+      }
+    },
+    "paymentMethods" : {
+      "title": "Payment Methods",
+      "msg": {
+        "noPaymentMethod": "You have no saved payment methods"
+      }
+    },
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "lastName": "Last Name"
+    },
+    "purchases" : {
+      "date":   "Date",
+      "noPurchaseMsg": "You haven't made any purchases",
+      "number": "Purchase #",
+      "status": "Status",
+      "title":  "Purchase History",
+      "total":  "Total"
+    },
+    "subscriptions" : {
+      "title": "Subscriptions",
+      "product": "Subscription",
+      "quantity": "Quantity",
+      "nextBillingDate": "Next Billing Date"
+    }
+  },
+  "purchaseInfo":{
+    "purchaseDetails": {
+      "backToProfile": "Go back to profile page",
+      "pageTitle": "Purchase Details"
+    },
+    "purchaseReceipt": {
+      "pageTitle": "Thank you. Your order has been processed"
+    },
+    "billingTitle": "Billing Information",
+    "itemName": "Name",
+    "itemQuantity": "Quantity",
+    "itemSubTotal": "Sub-total",
+    "itemTax": "Tax",
+    "itemsTitle": "Items",
+    "itemTotal": "Item Total",
+    "orderDate":"Order Purchase Date",
+    "orderNumber": "Order Number",
+    "orderStatus": "Status",
+    "orderTaxTotal": "Order Tax Total",
+    "orderTotal": "Order Total",
+    "paymentMethodTitle": "Payment Method",
+    "summaryTitle":"Summary"
+  },
+  "purchaseStatus": {
+    "COMPLETED": "Completed",
+    "IN_PROGRESS": "In progress",
+    "FAILED": "Failed"
+  }
+}

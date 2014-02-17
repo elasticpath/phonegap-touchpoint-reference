@@ -1,0 +1,13 @@
+node_modules
+*.log
+
+/ep-mobile/platforms/android/bin/*
+/ep-mobile/platforms/android/assets/www/*
+/ep-mobile/platforms/android/CordovaLib/bin/*
+/ep-mobile/platforms/android/res/xml/*
+
+/ep-mobile/www/*
+!/ep-mobile/www/config.xml
+
+/ep-src/*
+!/ep-src/.gitignore
