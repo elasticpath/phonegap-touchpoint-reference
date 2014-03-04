@@ -1,4 +1,4 @@
-PhoneGap POC for Reference Storefront 
+PhoneGap POC for Reference Storefront
 ============
 This is a Proof of Concept PhoneGap application to accompany <a href="https://github.elasticpath.net/cortex/ui-storefront">Elastic Path's HTML5 Reference Storefront</a>.
 
@@ -7,54 +7,53 @@ Prerequisites
 The PhoneGap application requires the following installed:
 
 * <a href="http://nodejs.org/">NodeJS</a>
+
+######Android only:######
+
 * <a href="http://developer.android.com/sdk/index.html">Android SDK</a>
 * <a href="http://ant.apache.org/">Apache Ant</a>
  
 The installed locations of the Android SDK and Apache Ant must also be in your PATH variable (adjust the precise directory paths below according to their installed locations):
 
-Windows
------------
-Append the following to your PATH variable:
-
-<code>;C:\Development\adt-bundle\sdk\platform-tools;C:\Development\adt-bundle\sdk\tools;C:\Development\apache-ant\bin</code>
-
-Mac
-----------
-Add the following line to your ~/.bash_profile file:
-
-<code>export PATH=${PATH}:/Development/adt-bundle/sdk/platform-tools:/Development/adt-bundle/sdk/tools</code>
-
-Installing and Running
+On Windows, append the following to your PATH variable:
+```
+;C:\Development\adt-bundle\sdk\platform-tools;C:\Development\adt-bundle\sdk\tools;C:\Development\apache-ant\bin
+```
+On Mac, add the following line to your ~/.bash_profile file:
+```
+export PATH=${PATH}:/Development/adt-bundle/sdk/platform-tools:/Development/adt-bundle/sdk/tools
+```
+Building the Apps
 =============
 
 1. Checkout the POC application source from <a href="https://github.elasticpath.net/cortex/phonegap-poc">GitHub</a> to a local directory.
-2. All further commands need to be executed at the command prompt while within this directory.
+2. **All further commands need to be executed at the command prompt while within this directory.**
 3. Install all required Node modules globally:
 <pre>
 <code>[sudo] npm install –g grunt-cli cordova phonegap</code>
 </pre>
-4. If you are on a Mac and want to run the app in an iOS simulator, you will need to:
+4. **(iOS)** If you want to run the app in an iOS simulator:
 <pre>
 <code>[sudo] npm install –g ios-sim</code>
 </pre>
-5. Now install the required modules locally:
+5. Install the required modules locally:
 <pre>
 <code>npm install</code>
 </pre>
-6. Delete any existing files (except .gitignore) from the ep-src folder and copy the latest <a href="https://github.elasticpath.net/cortex/ui-storefront">UI storefront code</a> into that folder.
-7. Ensure <code>/ep-src/public/ep.config.json</code> has the correct values for <code>cortexApi.path</code> and <code>cortexApi.scope</code>.
-8. Make the following file changes (where C:/Development/adt-bundle/sdk should be replaced with the path to your local Android SDK installation):
+6. Delete any existing files (except .gitignore) from the ep-src folder and copy the latest <a href="https://github.elasticpath.net/cortex/ui-storefront">HTML5 reference storefront code</a> into that folder.
+7. Ensure `/ep-src/public/ep.config.json` has the correct values for `cortexApi.path` and `cortexApi.scope`.
+8. **(Android)** Make the following file changes (where C:/Development/adt-bundle/sdk should be replaced with the path to your local Android SDK installation):
 <p><code>/ep-mobile/platforms/android/build.xml</code> (line 90)</p>
 <pre>
 <code>&lt;import file="C:/Development/adt-bundle/sdk/tools/ant/build.xml" /&gt;</code>
 </pre>
 <hr/>
-<p><code>/ep-mobile/platforms/android/local.properties</code> (line 10)</p>
+<p>`/ep-mobile/platforms/android/local.properties` (line 10)</p>
 <pre>
 <code>sdk.dir=C:/Development/adt-bundle/sdk</code>
 </pre>
 <hr/>
-<p><code>/ep-mobile/platforms/android/CordovaLib/local.properties</code> (line 10)</p>
+<p>`/ep-mobile/platforms/android/CordovaLib/local.properties` (line 10)</p>
 <pre>
 <code>sdk.dir=C:/Development/adt-bundle/sdk</code>
 </pre>
@@ -64,13 +63,40 @@ Installing and Running
 </pre>
 This copies the latest code from the ep-src folder into the PhoneGap project.
 10. Build the app:
+<p>**Android**</p>
 <pre>
 <code>grunt build:android</code>
 </pre>
-11. Run the app on a directly connected device or in an emulator:
+<p>**iOS**</p>
 <pre>
-<code>grunt run:android</code>
+<code>grunt build:ios</code>
 </pre>
-<pre>
-<code>grunt emulate:android</code>
-</pre>
+
+Running in an Emulator
+=============
+######Android######
+With an [Android Virtual Device](http://developer.android.com/tools/help/emulator.html) running:
+
+`grunt emulate:android`
+
+######iOS######
+Run on installed simulators using the Xcode project at `/ep-mobile/platforms/ios/HTML5 Storefront.xcodeproj`
+
+
+Installing to a Device
+=============
+######Android######
+The Android package file will be generated at `/ep-mobile/platforms/android/bin/ElasticPathMobile-debug.apk`
+######iOS######
+Using the Xcode project at `/ep-mobile/platforms/ios/HTML5 Storefront.xcodeproj`, the iOS app can be deployed to a registered device using a valid Apple Developer provisioning profile, see [this article](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/TestingYouriOSApp/TestingYouriOSApp.html) for further instructions.
+Known Issues
+=============
+######Localized strings in the iOS simulator######
+Some localized strings do not not load when the iOS app is run in the iOS simulator. Instead, the tokens used to identify the strings will appear e.g. the profile link will display the text 'auth.profile' instead of 'Profile'.
+
+Troubleshooting
+=============
+If the store categories do not appear in the menu, check that:
+
+1. the `INTEGRATOR_URL` variable in `Gruntfile.js` references a valid Cortex deployment
+2. the `cortexApi.path` and `cortexApi.scope` settings are correct in the `/ep-mobile/www/ep-config.json` JSON file that is generated during the build task
