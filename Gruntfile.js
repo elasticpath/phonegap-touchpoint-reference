@@ -1,5 +1,5 @@
 'use strict';
-var INTEGRATOR_URL = 'http://54.200.118.70:13080';
+var INTEGRATOR_URL = 'http://54.200.118.70:8080';
 var SRC_FOLDER_NAME = 'ep-src';
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
