@@ -32,17 +32,13 @@ Building the Apps
 <pre>
 <code>[sudo] npm install –g grunt-cli cordova phonegap</code>
 </pre>
-4. **(iOS)** If you want to run the app in an iOS simulator:
-<pre>
-<code>[sudo] npm install –g ios-sim</code>
-</pre>
-5. Install the required modules locally:
+4. Install the required modules locally:
 <pre>
 <code>npm install</code>
 </pre>
-6. Delete any existing files (except .gitignore) from the ep-src folder and copy the latest <a href="https://github.elasticpath.net/cortex/ui-storefront">HTML5 reference storefront code</a> into that folder.
-7. Ensure `/ep-src/public/ep.config.json` has the correct values for `cortexApi.path` and `cortexApi.scope`.
-8. **(Android)** Make the following file changes (where C:/Development/adt-bundle/sdk should be replaced with the path to your local Android SDK installation):
+5. Delete any existing files (except .gitignore) from the ep-src folder and copy the latest <a href="https://github.elasticpath.net/cortex/ui-storefront">HTML5 reference storefront code</a> into that folder.
+6. Ensure `/ep-src/public/ep.config.json` has the correct values for `cortexApi.path` and `cortexApi.scope`.
+7. **(Android)** Make the following file changes (where C:/Development/adt-bundle/sdk should be replaced with the path to your local Android SDK installation):
 <p><code>/ep-mobile/platforms/android/build.xml</code> (line 90)</p>
 <pre>
 <code>&lt;import file="C:/Development/adt-bundle/sdk/tools/ant/build.xml" /&gt;</code>
@@ -57,12 +53,12 @@ Building the Apps
 <pre>
 <code>sdk.dir=C:/Development/adt-bundle/sdk</code>
 </pre>
-9. Run: 
+8. Run: 
 <pre>
 <code>grunt dist</code>
 </pre>
 This copies the latest code from the ep-src folder into the PhoneGap project.
-10. Build the app:
+9. Build the app:
 <p>**Android**</p>
 <pre>
 <code>grunt build:android</code>
@@ -75,12 +71,12 @@ This copies the latest code from the ep-src folder into the PhoneGap project.
 Running in an Emulator
 =============
 ######Android######
-With an [Android Virtual Device](http://developer.android.com/tools/help/emulator.html) running:
+Start an [Android Virtual Device](http://developer.android.com/tools/help/emulator.html) and run:
 
 `grunt emulate:android`
 
 ######iOS######
-Run on installed simulators using the Xcode project at `/ep-mobile/platforms/ios/HTML5 Storefront.xcodeproj`
+Run the app with device simulators from Xcode using the project at `/ep-mobile/platforms/ios/HTML5 Storefront.xcodeproj`
 
 
 Installing to a Device
