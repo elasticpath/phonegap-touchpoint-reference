@@ -1,6 +1,6 @@
-PhoneGap POC for Reference Storefront
+PhoneGap Touchpoint for Reference Storefront
 ============
-This is a Proof of Concept PhoneGap application to accompany <a href="https://github.elasticpath.net/cortex/ui-storefront">Elastic Path's HTML5 Reference Storefront</a>.
+This is a PhoneGap application to accompany <a href="https://github.elasticpath.net/cortex/ui-storefront">Elastic Path's HTML5 Reference Storefront</a>.
 
 Prerequisites
 ============
@@ -26,7 +26,7 @@ export PATH=${PATH}:/Development/adt-bundle/sdk/platform-tools:/Development/adt-
 Building the Apps
 =============
 
-1. Checkout the POC application source from <a href="https://github.elasticpath.net/cortex/phonegap-poc">GitHub</a> to a local directory.
+1. Checkout the PhoneGap application source from <a href="https://github.elasticpath.net/cortex/phonegap-poc">GitHub</a> to a local directory.
 2. **All further commands need to be executed at the command prompt while within this directory.**
 3. Install all required Node modules globally:
 <pre>
