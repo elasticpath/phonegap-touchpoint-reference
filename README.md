@@ -89,10 +89,30 @@ Known Issues
 =============
 ######Localized strings in the iOS simulator######
 Some localized strings do not not load when the iOS app is run in the iOS simulator. Instead, the tokens used to identify the strings will appear e.g. the profile link will display the text 'auth.profile' instead of 'Profile'.
-
 Troubleshooting
 =============
+######Missing store categories######
 If the store categories do not appear in the menu, check that:
 
 1. the `INTEGRATOR_URL` variable in `Gruntfile.js` references a valid Cortex deployment
 2. the `cortexApi.path` and `cortexApi.scope` settings are correct in the `/ep-mobile/www/ep-config.json` JSON file that is generated during the build task
+
+<br/>
+######Building the apps with HTML5 Reference Storefront version 1.9 and earlier######
+In order to work with these versions of the reference storefront, the following code change is required:
+
+In `ui-storefront/public/ep.client.js`, the following line in the `ep.io.getApiContext` function:
+
+<pre>
+<code>retVal = '/' + config.cortexApi.path;</code>
+</pre>
+
+should be replaced with:
+
+<pre>
+<code>if (/^http/.test(config.cortexApi.path)) {
+  retVal = config.cortexApi.path;
+} else {
+  retVal = '/' + config.cortexApi.path;
+}</code>
+</pre>
