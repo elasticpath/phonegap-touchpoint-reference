@@ -44,6 +44,11 @@ Building the Apps
 <code>&lt;import file="C:/Development/adt-bundle/sdk/tools/ant/build.xml" /&gt;</code>
 </pre>
 <hr/>
+<p><code>/ep-mobile/platforms/android/CordovaLib/build.xml</code> (line 90)</p>
+<pre>
+<code>&lt;import file="C:/Development/adt-bundle/sdk/tools/ant/build.xml" /&gt;</code>
+</pre>
+<hr/>
 <p>`/ep-mobile/platforms/android/local.properties` (line 10)</p>
 <pre>
 <code>sdk.dir=C:/Development/adt-bundle/sdk</code>
