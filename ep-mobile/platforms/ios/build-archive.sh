@@ -116,5 +116,8 @@ xcodebuild -project "${PROJ_NAME}.xcodeproj" -scheme "${PROJ_NAME}" -sdk iphoneo
 # Archive the project (generates a .xcarchive file)
 xcodebuild archive -archivePath "${PROJ_NAME}" -scheme "${PROJ_NAME}" -arch armv7 VALID_ARCHS=armv7
 
+# Delete any existing IPA file in the target directory
+rm -f "${PROJ_NAME}.ipa"
+
 # Export the archive as an IPA file using the provisioning profile
 xcodebuild -exportArchive -exportFormat IPA -archivePath "${PROJ_NAME}.xcarchive" -exportPath "${PROJ_NAME}" -exportProvisioningProfile "${PROVISIONING_PROFILE}"
