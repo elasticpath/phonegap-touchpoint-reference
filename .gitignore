@@ -5,6 +5,7 @@ node_modules
 /ep-mobile/platforms/android/assets/www/*
 /ep-mobile/platforms/android/CordovaLib/bin/*
 /ep-mobile/platforms/android/res/xml/*
+/ep-mobile/platforms/ios/www/*
 
 /ep-mobile/www/*
 !/ep-mobile/www/config.xml
